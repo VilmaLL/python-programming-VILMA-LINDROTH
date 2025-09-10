@@ -1,2 +1,2 @@
 # python-programming-VILMA-LINDROTH
-# repot handlar om attt lära sig använda Git och Github
+# This Repo is for excersises and various assignments for the course Programmering med Python(AIM25)
