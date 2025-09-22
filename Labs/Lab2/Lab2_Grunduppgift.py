@@ -78,7 +78,7 @@ for x, y, label in ClassifiedTestpoints:
     color = "green" if label == 0 else "red"
     LabelText = "Classified as Pichu" if label == 0 else "Classified as Pikachu"
     
-    if LabelText not in LabelDuplet: # Källhantering: hantering av dubblering av labels förklarat med annat exempel av chatGPT 
+    if LabelText not in LabelDuplet: # Källhänvisning: hantering av dubblering av labels förklarat med annat exempel av chatGPT 
         plt.scatter(x, y, color = color, label = LabelText)
         LabelDuplet.add(LabelText)
     else:
@@ -93,3 +93,4 @@ plt.ylim(25, 45)
 plt.grid(True)
 plt.legend()
 plt.show()
+
