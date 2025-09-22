@@ -1,0 +1,40 @@
+Number of rolls: 10
+1s: 2, probability: 0.2000
+2s: 2, probability: 0.2000
+3s: 1, probability: 0.1000
+4s: 2, probability: 0.2000
+5s: 2, probability: 0.2000
+6s: 1, probability: 0.1000
+
+Number of rolls: 100
+1s: 18, probability: 0.1800
+2s: 17, probability: 0.1700
+3s: 18, probability: 0.1800
+4s: 14, probability: 0.1400
+5s: 11, probability: 0.1100
+6s: 22, probability: 0.2200
+
+Number of rolls: 1000
+1s: 170, probability: 0.1700
+2s: 173, probability: 0.1730
+3s: 157, probability: 0.1570
+4s: 160, probability: 0.1600
+5s: 166, probability: 0.1660
+6s: 174, probability: 0.1740
+
+Number of rolls: 10000
+1s: 1658, probability: 0.1658
+2s: 1658, probability: 0.1658
+3s: 1694, probability: 0.1694
+4s: 1626, probability: 0.1626
+5s: 1659, probability: 0.1659
+6s: 1705, probability: 0.1705
+
+Number of rolls: 100000
+1s: 16778, probability: 0.1678
+2s: 16734, probability: 0.1673
+3s: 16503, probability: 0.1650
+4s: 16915, probability: 0.1691
+5s: 16576, probability: 0.1658
+6s: 16494, probability: 0.1649
+

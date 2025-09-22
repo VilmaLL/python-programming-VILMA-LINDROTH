@@ -1,0 +1,7 @@
+Simulate 20 dice rolls:
+3 5 2 4 4 4 4 6 1 1 2 3 2 6 5 3 4 1 6 6
+
+Sorted dice rolls: 
+1 1 1 2 2 2 3 3 3 4 4 4 4 4 5 5 6 6 6 6
+
+Number of fours: 5
