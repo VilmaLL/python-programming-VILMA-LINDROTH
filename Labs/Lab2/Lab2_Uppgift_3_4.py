@@ -2,7 +2,7 @@ import random
 import numpy as np
 from collections import Counter
 
-# läser in datan från fil till en lista
+# importerar datan från fil till en lista, cleanar upp datapunkter och tilldelar labels
 
 datapoints = []
 pathData = r"C:\Users\vilma\python-programming-VILMA-LINDROTH\Labs\datapoints.txt"
@@ -15,7 +15,7 @@ with open(pathData, "r") as file:
             Label = int(DataParts[2])
             datapoints.append((WidthData, HeightData, Label))
 
-# separera datan i filen till två listor ref/test
+# separera datan från filen till två randomized listor ref/test där 50% av datan är pichu och 50% är pikachu
 
 Datapoints_c0 = [d for d in datapoints if d[2] == 0]
 Datapoints_c1 = [d for d in datapoints if d[2] == 1]
@@ -28,7 +28,7 @@ TestData = Datapoints_c0[50:] + Datapoints_c1[50:]
 
 random.shuffle(TestData)
 
-# Nearest neighbor funktion
+# Nearest neighbor (NNK) funktion där k = 10, euklidisk distans beräknas
 
 def EuclideanDistance (p1, p2):
     return np.sqrt((p1[0]-p2[0])**2 + (p1[1] - p2[1])**2)
@@ -66,10 +66,10 @@ def NearestNeighbor(TestData, ReferenceData, k=10):
         
     return PredictedLabelForTest
 
-# Klassificera testpunkt som pichu eller pikachu
-PredictedLabels = NearestNeighbor(TestData, ReferenceData, k = 10)
+# Ankallar NKK-funktion och predictar klaccifikation för datapunkterna
+PredictedLabelForTest = NearestNeighbor(TestData, ReferenceData, k = 10)
 
-# Accuracy
+# Beräknar accuracy av predictions
 
 TruePrediction = 0
 FalsePrediction = 0
@@ -82,3 +82,4 @@ for i in range (len(TrueLabelForTest)):
 
 Accuracy = (TruePrediction)/(TruePrediction + FalsePrediction)
 print(f"Accuracy: {Accuracy}")
+
