@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-# Definiera lista och importera datapoints från fil till lista
+# Definiera lista och importera fil. Splitta och cleana upp datapunkter, samt tilldela labels
 datapoints = []
 pathData = r"C:\Users\vilma\python-programming-VILMA-LINDROTH\Labs\datapoints.txt"
 pathTestData = r"C:\Users\vilma\python-programming-VILMA-LINDROTH\Labs\testpoints.txt"
@@ -29,7 +29,7 @@ for width, height, label in datapoints:
         HeightsPikachu.append(height)
 
 
-# definiera lista och importera testpoints från fil till lista
+# definiera lista och importera fil. splitta och cleana upp datapunkter och tilldela labels
 testpoints = []
 with open(pathTestData, "r") as file:
     for line in file:
@@ -39,7 +39,7 @@ with open(pathTestData, "r") as file:
             HeightTest = float(TestParts[1])
             testpoints.append((WidthTest, HeightTest))
 
-# Nearest Neighbor Funktion
+# Nearest Neighbor Funktion som använder euklidisk distance i beräkningen
 
 def EuclideanDistance (p1, p2):
     return np.sqrt((p1[0]-p2[0])**2 + (p1[1] - p2[1])**2)
@@ -67,7 +67,7 @@ for testpoint in testpoints:
     ClassifiedTestpoints.append((testpoint[0], testpoint[1], PredictedLabel))
 
 
-# plotta datapunkterna och testpunkterna med olika färger för pichu och pikachu
+# plotta graf med datapunkterna och testpunkterna med olika färger för pichu och pikachu
 plt.figure(figsize=(10, 6))
 plt.scatter(WidthsPichu, HeightsPichu, color = "yellow", label = "Pichu")
 plt.scatter(WidthsPikachu, HeightsPikachu, color = "orange", label = "Pikachu")
@@ -93,3 +93,4 @@ plt.ylim(25, 45)
 plt.grid(True)
 plt.legend()
 plt.show()
+
