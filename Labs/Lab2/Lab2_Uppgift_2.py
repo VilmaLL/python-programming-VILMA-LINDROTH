@@ -1,7 +1,7 @@
 import numpy as np
 from collections import Counter
 
-# felhantering för input
+# felhantering för input vid negativa tal ´samt icke-numerisk input
 while True:
     try:
         print("Input width and height: ")
@@ -16,7 +16,7 @@ while True:
 
 testpunkt = (testpunkt_x, testpunkt_y)
 
-# Definiera lista och importera datapoints från fil
+# Definiera lista och importera datapoints från fil. cleana upp datapunker och tilldela labels
 datapoints = []
 pathData = r"C:\Users\vilma\python-programming-VILMA-LINDROTH\Labs\datapoints.txt"
 with open(pathData, "r") as file:
@@ -42,7 +42,7 @@ for width, height, label in datapoints:
         WidthsPikachu.append(width)
         HeightsPikachu.append(height)
 
-# nearest neighbor funktion
+# nearest neighbor (NNK) funktion med euklidisk distans som beräkning. k=10 
 def EuclideanDistance (p1, p2):
     return np.sqrt((p1[0]-p2[0])**2 + (p1[1] - p2[1])**2)
 
@@ -72,3 +72,4 @@ if PredictedLabel == 0:
     print("Sample classified as Pichu")
 else:
     print("Sample classified as Pikachu")
+
