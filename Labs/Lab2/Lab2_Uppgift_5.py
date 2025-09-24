@@ -3,7 +3,7 @@ import numpy as np
 from collections import Counter
 import matplotlib.pyplot as plt
 
-# definiera lista och importera datapoints från fil till lista
+# Importera datapoints från fil till lista. cleana upp datapoints och tilldela labels
 datapoints = []
 pathData = r"C:\Users\vilma\python-programming-VILMA-LINDROTH\Labs\datapoints.txt"
 with open(pathData, "r") as file:
@@ -16,7 +16,7 @@ with open(pathData, "r") as file:
             datapoints.append((WidthData, HeightData, Label))
 
 
-# Nearest neighbor funktion
+# Nearest neighbor (NNK-funktion) funktion, k = 10. Euklidisk distans beräkning
 
 def EuclideanDistance (p1, p2):
     return np.sqrt((p1[0]-p2[0])**2 + (p1[1] - p2[1])**2)
@@ -56,7 +56,7 @@ def NearestNeighbor(TestData, ReferenceData, k=10):
 AccuracyList = []
 for simulations in range(10):
 
-    # separera datan i filen till två listor ref/test
+    # separera datan i filen till två listor ref/test med jämt fördelade datapunkter för Pichu resp. Pikachu
 
     Datapoints_c0 = [d for d in datapoints if d[2] == 0]
     Datapoints_c1 = [d for d in datapoints if d[2] == 1]
@@ -69,7 +69,7 @@ for simulations in range(10):
 
     random.shuffle(TestData)
 
-    # kalla på funktionen
+    # kalla på NNK-funktionen
     TrueLabelForTest, PredictedLabelForTest = NearestNeighbor(TestData, ReferenceData, k = 10)
 
     TruePrediction = 0
@@ -93,7 +93,7 @@ for i in AccuracyList:
 AccuracyAverage = AccuracySum/ len(AccuracyList)
 print(f"{AccuracyAverage:.3f}")
 
-# plotta accuracy
+# plotta accuracy över tid, samt medel accuracy
 x = list(range(10))
 y = AccuracyList
 
@@ -108,3 +108,4 @@ plt.ylim(0.85 , 1.0)
 plt.grid(True)
 plt.legend()
 plt.show()
+
