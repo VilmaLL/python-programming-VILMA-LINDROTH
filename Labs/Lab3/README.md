@@ -2,4 +2,4 @@ This folder contains a .py file that reads a file "unlabelled_data.csv", labels 
 
 It contains a report.ipynb file that compares several lines for linear classification and discussed the differences between the lines and the potential preferences to use one line over another, as well as the reliability of the classification method.
 
-As well as the two data files "unlabelled_data.csv" and "labelled_data.csv"
+It also contains the two data files "unlabelled_data.csv" and "labelled_data.csv"
